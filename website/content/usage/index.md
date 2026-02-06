@@ -43,6 +43,13 @@ The list allows you to…
 
 See the footer of the list for all possible keys.
 
+## Resetting Exercises
+
+You can reset an exercise to its original state using the `reset` command:
+
+- `rustlings reset <exercise_name>`: Reset a single exercise
+- `rustlings reset all`: Reset all exercises
+
 ## Questions?
 
 If you need any help while doing the exercises and the builtin hints aren't helpful, feel free to ask in the [_Q&A_ discussions](https://github.com/rust-lang/rustlings/discussions/categories/q-a?discussions_q=) if your question isn't answered there 💡

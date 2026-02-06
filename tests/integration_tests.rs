@@ -144,6 +144,15 @@ fn reset_without_exercise_name() {
 }
 
 #[test]
+fn reset_all() {
+    Cmd::default()
+        .current_dir("tests/test_exercises")
+        .args(&["reset", "all"])
+        .output(PartialStdout("All exercises have been reset"))
+        .success();
+}
+
+#[test]
 fn hint() {
     Cmd::default()
         .current_dir("tests/test_exercises")

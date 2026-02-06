@@ -176,9 +176,17 @@ fn main() -> Result<ExitCode> {
             }
         }
         Some(Subcommands::Reset { name }) => {
-            app_state.set_current_exercise_by_name(&name)?;
-            let exercise_path = app_state.reset_current_exercise()?;
-            println!("The exercise {exercise_path} has been reset");
+            if name == "all" {
+                let n_exercises = app_state.exercises().len();
+                for ind in 0..n_exercises {
+                    app_state.reset_exercise_by_ind(ind)?;
+                }
+                println!("All exercises have been reset");
+            } else {
+                app_state.set_current_exercise_by_name(&name)?;
+                let exercise_path = app_state.reset_current_exercise()?;
+                println!("The exercise {exercise_path} has been reset");
+            }
         }
         Some(Subcommands::Hint { name }) => {
             if let Some(name) = name {
