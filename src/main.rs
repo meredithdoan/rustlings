@@ -180,8 +180,8 @@ fn main() -> Result<ExitCode> {
                 let n_exercises = app_state.exercises().len();
                 for ind in 0..n_exercises {
                     app_state.reset_exercise_by_ind(ind)?;
-                    app_state.set_current_exercise_ind(0);
                 }
+                app_state.set_current_exercise_ind(0);
                 println!("All exercises have been reset");
             } else {
                 app_state.set_current_exercise_by_name(&name)?;
